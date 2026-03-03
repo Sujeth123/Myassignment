@@ -27,7 +27,6 @@ public class PromtAlert {
 	prompt1.sendKeys("Geetha");
 	prompt1.accept();
 	
-	//<p id="demo">Hello Geetha! How are you today?</p>
 	
 	String promptmsg=driver.findElement(By.id("demo")).getText();
 
@@ -35,8 +34,15 @@ public class PromtAlert {
 	
 		System.out.println("The message is : " + promptmsg); 
 		
+		if(promptmsg.contains("Geetha")){
+			System.out.println("The message is success");
+		}
+		else
+		{
+			System.out.println("The message is failed");
+		}
 		
-		
+		driver.switchTo().defaultContent();
 	}
-
+	
 }
